@@ -13,7 +13,7 @@ export function ValidationFeedback({ attribute, association, alertStyle, class: 
     if (association && typeof association.validation !== "undefined") {
         validationFeedbackAssociation = association.validation;
     }
-    const style = alertStyle ? alertStyle.value : undefined;
+    const style = alertStyle ? (alertStyle.value ? alertStyle.value.toLowerCase() : "") : "";
     const className = "custom-validation-widget " + (classNameInput ? classNameInput : "");
     return validationFeedbackAttribute || validationFeedbackAssociation ? (
         <div className={className} style={styleInput}>
