@@ -8,9 +8,38 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="attribute" type="attribute" required="false">
+                <caption>Attribute</caption>
+                <description>Attribute to check for validation messages</description>
+                <attributeTypes>
+                    <attributeType name="AutoNumber" />
+                    <attributeType name="Binary" />
+                    <attributeType name="Boolean" />
+                    <attributeType name="DateTime" />
+                    <attributeType name="Decimal" />
+                    <attributeType name="Enum" />
+                    <attributeType name="HashString" />
+                    <attributeType name="Integer" />
+                    <attributeType name="Long" />
+                    <attributeType name="String" />
+                </attributeTypes>
+            </property>
+            <property key="association" type="association" selectableObjects="objectsDatasource" required="false">
+                <caption>Association</caption>
+                <description>Association to check for validation messages</description>
+                <associationTypes>
+                    <associationType name="Reference"/>
+                    <associationType name="ReferenceSet"/>
+                </associationTypes>
+            </property>
+            <property key="objectsDatasource" type="datasource" isList="true" required="false">
+                <caption>Selectable objects</caption>
+                <description>Needed for the association, can return an empty list</description>
+            </property>
+            <property key="alertStyle" type="expression" required="true" defaultValue="'danger'">
+                <caption>alertStyle</caption>
+                <description>Style of the alert. Possible values: "default" | "primary" | "success" | "info" | "warning" | "danger".</description>
+                <returnType type="String" />
             </property>
         </propertyGroup>
     </properties>
