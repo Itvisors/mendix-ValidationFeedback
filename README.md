@@ -1,24 +1,16 @@
 ## ValidationFeedback
-[Custom validation feedback on attributes or associations where you cannot use the default one]
+In some cases you want to show validation feedback on a attribute or association, but you cannot use the default validation feedback, for example for some custom widgets or when you want to show the validation not directly underneath the field. You can of course build a workaround for this and add helper attributes to show the validation. This is not needed by using this widget. Just select the attribute or association you want to track and show the widget anywhere on the page.
 
 ## Features
-[feature highlights]
+- Show validation message that is triggered for an attribute
+- Show validation message that is triggered for an association
+- Different styling for the validation feedback, "success", "primary", "danger", "default", "info" or "warning"
+
 
 ## Usage
-[step by step instructions]
+- Add widget anywhere on the page where needed
+- Select attribute or association to track
+- Use the validation feedback as you are used to
 
-## Demo project
-[link to sandbox]
-
-## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
+## Known Limitations
+When an assocition is used, the selectable objects are mandatory. However, you can just return an empty list.
