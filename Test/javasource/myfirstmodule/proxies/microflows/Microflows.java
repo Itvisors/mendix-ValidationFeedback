@@ -39,6 +39,12 @@ public class Microflows
 		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
 		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAssociation").withParams(params).execute(context);
 	}
+	public static void aCT_Entity_TriggerValidationAttributeOverAssociation(IContext context, myfirstmodule.proxies.Entity _entity)
+	{
+		Map<java.lang.String, Object> params = new HashMap<>();
+		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
+		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAttributeOverAssociation").withParams(params).execute(context);
+	}
 	public static void aCT_Entity_TriggerValidationBoth(IContext context, myfirstmodule.proxies.Entity _entity)
 	{
 		Map<java.lang.String, Object> params = new HashMap<>();

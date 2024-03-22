@@ -36,7 +36,7 @@
                 <caption>Selectable objects</caption>
                 <description>Needed for the association, can return an empty list</description>
             </property>
-            <property key="alertStyle" type="expression" required="true" defaultValue="'danger'">
+            <property key="alertStyle" type="expression" required="false" defaultValue="'danger'">
                 <caption>alertStyle</caption>
                 <description>Style of the alert. Possible values: "default" | "primary" | "success" | "info" | "warning" | "danger".</description>
                 <returnType type="String" />
