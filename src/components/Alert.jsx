@@ -1,5 +1,5 @@
-import { createElement } from "react";
 import classNames from "classnames";
+import { createElement } from "react";
 
 /**
  * alertStyle = "default" | "primary" | "success" | "info" | "warning" | "danger"
@@ -9,12 +9,12 @@ import classNames from "classnames";
 export const Alert = ({ alertStyle = "danger", className, children }) => {
     let alertClass;
     if (
-        alertStyle == "default" ||
-        alertStyle == "primary" ||
-        alertStyle == "success" ||
-        alertStyle == "info" ||
-        alertStyle == "warning" ||
-        alertStyle == "danger"
+        alertStyle === "default" ||
+        alertStyle === "primary" ||
+        alertStyle === "success" ||
+        alertStyle === "info" ||
+        alertStyle === "warning" ||
+        alertStyle === "danger"
     ) {
         alertClass = "alert-" + alertStyle;
     } else {

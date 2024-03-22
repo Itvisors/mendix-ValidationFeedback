@@ -1,7 +1,6 @@
-import { createElement } from "react";
-
-import { Alert } from "./components/Alert";
 import "./ui/ValidationFeedback.css";
+import { Alert } from "./components/Alert";
+import { createElement } from "react";
 
 export function ValidationFeedback({ attribute, association, alertStyle, class: classNameInput, style: styleInput }) {
     // initialize validationFeedback, which can be either undefined or a string
@@ -14,8 +13,8 @@ export function ValidationFeedback({ attribute, association, alertStyle, class: 
     if (association && typeof association.validation !== "undefined") {
         validationFeedbackAssociation = association.validation;
     }
-    let style = alertStyle ? alertStyle.value : undefined;
-    let className = "custom-validation-widget " + (classNameInput ? classNameInput : "");
+    const style = alertStyle ? alertStyle.value : undefined;
+    const className = "custom-validation-widget " + (classNameInput ? classNameInput : "");
     return validationFeedbackAttribute || validationFeedbackAssociation ? (
         <div className={className} style={styleInput}>
             <Alert alertStyle={style}>{validationFeedbackAttribute}</Alert>
