@@ -8,39 +8,45 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="attribute" type="attribute" required="false">
-                <caption>Attribute</caption>
-                <description>Attribute to check for validation messages</description>
-                <attributeTypes>
-                    <attributeType name="AutoNumber" />
-                    <attributeType name="Binary" />
-                    <attributeType name="Boolean" />
-                    <attributeType name="DateTime" />
-                    <attributeType name="Decimal" />
-                    <attributeType name="Enum" />
-                    <attributeType name="HashString" />
-                    <attributeType name="Integer" />
-                    <attributeType name="Long" />
-                    <attributeType name="String" />
-                </attributeTypes>
-            </property>
-            <property key="association" type="association" selectableObjects="objectsDatasource" required="false">
-                <caption>Association</caption>
-                <description>Association to check for validation messages</description>
-                <associationTypes>
-                    <associationType name="Reference"/>
-                    <associationType name="ReferenceSet"/>
-                </associationTypes>
-            </property>
-            <property key="objectsDatasource" type="datasource" isList="true" required="false">
-                <caption>Selectable objects</caption>
-                <description>Needed for the association, can return an empty list</description>
-            </property>
-            <property key="alertStyle" type="expression" required="false" defaultValue="'danger'">
-                <caption>alertStyle</caption>
-                <description>Style of the alert. Possible values: "default" | "primary" | "success" | "info" | "warning" | "danger".</description>
-                <returnType type="String" />
-            </property>
+            <propertyGroup caption="Attribute">
+                <property key="attribute" type="attribute" required="false">
+                    <caption>Attribute</caption>
+                    <description>Attribute to check for validation messages</description>
+                    <attributeTypes>
+                        <attributeType name="AutoNumber" />
+                        <attributeType name="Binary" />
+                        <attributeType name="Boolean" />
+                        <attributeType name="DateTime" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Enum" />
+                        <attributeType name="HashString" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Association">
+                <property key="association" type="association" selectableObjects="objectsDatasource" required="false">
+                    <caption>Association</caption>
+                    <description>Association to check for validation messages</description>
+                    <associationTypes>
+                        <associationType name="Reference"/>
+                        <associationType name="ReferenceSet"/>
+                    </associationTypes>
+                </property>
+                <property key="objectsDatasource" type="datasource" isList="true" required="false">
+                    <caption>Selectable objects</caption>
+                    <description>Needed for the association, can return an empty list</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Styling">
+                <property key="alertStyle" type="expression" required="false" defaultValue="'danger'">
+                    <caption>alertStyle</caption>
+                    <description>Style of the alert. Possible values: "default" | "primary" | "success" | "info" | "warning" | "danger".</description>
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
         </propertyGroup>
     </properties>
 </widget>
