@@ -18,6 +18,7 @@ Test/.classpath
 Test/.project
 Test/theme/.sass-cache/
 Test/GPUCache/
+Test/javascriptsource/
 dist/
 node_modules/
 *.log

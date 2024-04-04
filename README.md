@@ -13,4 +13,4 @@ In some cases you want to show validation messages on an attribute or associatio
 - Use the validation message as you are used to
 
 ## Known Limitations
-When an assocition is used, the selectable objects are mandatory. However, you can just return an empty list.
+When an association is used, the selectable objects are mandatory. However, you can just return an empty list.
