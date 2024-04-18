@@ -4,57 +4,122 @@
 
 package myfirstmodule.proxies.microflows;
 
-import java.util.HashMap;
-import java.util.Map;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 
-public class Microflows
+public final class Microflows
 {
 	/**
-	 * @deprecated
-	 * The default constructor of the Microflows class should not be used.
-	 * Use the static microflow invocation methods instead.
+	 * Private constructor to prevent instantiation of this class. 
 	 */
-	@java.lang.Deprecated(since = "9.12", forRemoval = true)
-	public Microflows() {}
+	private Microflows() {}
 
 	// These are the microflows for the MyFirstModule module
-	public static void aCT_Entity_Refresh(IContext context, myfirstmodule.proxies.Entity _entity)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aCT_Entity_RefreshBuilder(
+		myfirstmodule.proxies.Entity _entity
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
-		Core.microflowCall("MyFirstModule.ACT_Entity_Refresh").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.ACT_Entity_Refresh");
+		builder = builder.withParam("Entity", _entity);
+		return builder;
 	}
-	public static void aCT_Entity_TriggerValidation(IContext context, myfirstmodule.proxies.Entity _entity)
+
+	public static void aCT_Entity_Refresh(
+		IContext context,
+		myfirstmodule.proxies.Entity _entity
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
-		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidation").withParams(params).execute(context);
+		aCT_Entity_RefreshBuilder(
+				_entity
+			)
+			.execute(context);
 	}
-	public static void aCT_Entity_TriggerValidationAssociation(IContext context, myfirstmodule.proxies.Entity _entity)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aCT_Entity_TriggerValidationBuilder(
+		myfirstmodule.proxies.Entity _entity
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
-		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAssociation").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidation");
+		builder = builder.withParam("Entity", _entity);
+		return builder;
 	}
-	public static void aCT_Entity_TriggerValidationAttributeOverAssociation(IContext context, myfirstmodule.proxies.Entity _entity)
+
+	public static void aCT_Entity_TriggerValidation(
+		IContext context,
+		myfirstmodule.proxies.Entity _entity
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
-		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAttributeOverAssociation").withParams(params).execute(context);
+		aCT_Entity_TriggerValidationBuilder(
+				_entity
+			)
+			.execute(context);
 	}
-	public static void aCT_Entity_TriggerValidationBoth(IContext context, myfirstmodule.proxies.Entity _entity)
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aCT_Entity_TriggerValidationAssociationBuilder(
+		myfirstmodule.proxies.Entity _entity
+	)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		params.put("Entity", _entity == null ? null : _entity.getMendixObject());
-		Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationBoth").withParams(params).execute(context);
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAssociation");
+		builder = builder.withParam("Entity", _entity);
+		return builder;
 	}
+
+	public static void aCT_Entity_TriggerValidationAssociation(
+		IContext context,
+		myfirstmodule.proxies.Entity _entity
+	)
+	{
+		aCT_Entity_TriggerValidationAssociationBuilder(
+				_entity
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aCT_Entity_TriggerValidationAttributeOverAssociationBuilder(
+		myfirstmodule.proxies.Entity _entity
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationAttributeOverAssociation");
+		builder = builder.withParam("Entity", _entity);
+		return builder;
+	}
+
+	public static void aCT_Entity_TriggerValidationAttributeOverAssociation(
+		IContext context,
+		myfirstmodule.proxies.Entity _entity
+	)
+	{
+		aCT_Entity_TriggerValidationAttributeOverAssociationBuilder(
+				_entity
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder aCT_Entity_TriggerValidationBothBuilder(
+		myfirstmodule.proxies.Entity _entity
+	)
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.ACT_Entity_TriggerValidationBoth");
+		builder = builder.withParam("Entity", _entity);
+		return builder;
+	}
+
+	public static void aCT_Entity_TriggerValidationBoth(
+		IContext context,
+		myfirstmodule.proxies.Entity _entity
+	)
+	{
+		aCT_Entity_TriggerValidationBothBuilder(
+				_entity
+			)
+			.execute(context);
+	}
+	public static com.mendix.core.actionmanagement.MicroflowCallBuilder dS_Entity_GetOrCreateBuilder()
+	{
+		com.mendix.core.actionmanagement.MicroflowCallBuilder builder = Core.microflowCall("MyFirstModule.DS_Entity_GetOrCreate");
+		return builder;
+	}
+
 	public static myfirstmodule.proxies.Entity dS_Entity_GetOrCreate(IContext context)
 	{
-		Map<java.lang.String, Object> params = new HashMap<>();
-		IMendixObject result = (IMendixObject)Core.microflowCall("MyFirstModule.DS_Entity_GetOrCreate").withParams(params).execute(context);
-		return result == null ? null : myfirstmodule.proxies.Entity.initialize(context, result);
+		Object result = dS_Entity_GetOrCreateBuilder().execute(context);
+		return result == null ? null : myfirstmodule.proxies.Entity.initialize(context, (IMendixObject) result);
 	}
 }
