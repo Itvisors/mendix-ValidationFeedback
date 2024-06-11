@@ -2,7 +2,15 @@ import "./ui/ValidationFeedback.css";
 import { Alert } from "./components/Alert";
 import { createElement } from "react";
 
-export function ValidationFeedback({ attribute, association, alertStyle, class: classNameInput, style: styleInput }) {
+export function ValidationFeedback({
+    attribute,
+    association,
+    alertStyle,
+    horizontalIndentation,
+    indentationWidth,
+    class: classNameInput,
+    style: styleInput
+}) {
     // initialize validationFeedback, which can be either undefined or a string
     let validationFeedbackAttribute;
     let validationFeedbackAssociation;
@@ -14,11 +22,28 @@ export function ValidationFeedback({ attribute, association, alertStyle, class: 
         validationFeedbackAssociation = association.validation;
     }
     const style = alertStyle ? (alertStyle.value ? alertStyle.value.toLowerCase() : "") : "";
-    const className = "custom-validation-widget " + (classNameInput ? classNameInput : "");
-    return validationFeedbackAttribute || validationFeedbackAssociation ? (
+    const className =
+        "custom-validation-widget " +
+        (horizontalIndentation ? `col-sm-${12 - indentationWidth} ` : "") +
+        (classNameInput ? classNameInput : "");
+
+    const validationContent = (
         <div className={className} style={styleInput}>
             <Alert alertStyle={style}>{validationFeedbackAttribute}</Alert>
             <Alert alertStyle={style}>{validationFeedbackAssociation}</Alert>
+        </div>
+    );
+
+    return validationFeedbackAttribute || validationFeedbackAssociation ? (
+        <div>
+            {horizontalIndentation ? (
+                <div className="row">
+                    <div className={`col-sm-${indentationWidth}`}></div>
+                    {validationContent}
+                </div>
+            ) : (
+                validationContent
+            )}
         </div>
     ) : undefined;
 }

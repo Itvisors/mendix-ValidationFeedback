@@ -2,7 +2,6 @@
 Place your custom CSS here
 */
 .custom-validation-widget .mx-validation-message{
-    margin-top: 8px;
     margin-bottom: 0px;
     padding: 8px;
 }

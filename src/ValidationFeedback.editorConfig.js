@@ -1,3 +1,5 @@
+import { hidePropertyIn } from "@mendix/pluggable-widgets-tools";
+
 /**
  * @typedef Property
  * @type {object}
@@ -48,33 +50,28 @@
  */
 export function getProperties(values, defaultProperties, target) {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
-    /* Example
-    if (values.myProperty === "custom") {
-        delete defaultProperties.properties.myOtherProperty;
+    if (values.horizontalIndentation === false) {
+        hidePropertyIn(defaultProperties, values, "indentationWidth");
     }
-    */
     return defaultProperties;
 }
 
-// /**
-//  * @param {Object} values
-//  * @returns {Problem[]} returns a list of problems.
-//  */
-// export function check(values) {
-//    /** @type {Problem[]} */
-//    const errors = [];
-//    // Add errors to the above array to throw errors in Studio and Studio Pro.
-//    /* Example
-//    if (values.myProperty !== "custom") {
-//        errors.push({
-//            property: `myProperty`,
-//            message: `The value of 'myProperty' is different of 'custom'.`,
-//            url: "https://github.com/myrepo/mywidget"
-//        });
-//    }
-//    */
-//    return errors;
-// }
+/**
+ * @param {Object} values
+ * @returns {Problem[]} returns a list of problems.
+ */
+export function check(values) {
+    /** @type {Problem[]} */
+    const errors = [];
+    // Add errors to the above array to throw errors in Studio and Studio Pro.
+    if (values.horizontalIndentation && (values.indentationWidth < 0 || values.indentationWidth > 11)) {
+        errors.push({
+            property: "indentationWidth",
+            message: "  Indentation width must be a number between 0 and 11"
+        });
+    }
+    return errors;
+}
 
 // /**
 //  * @param {object} values
