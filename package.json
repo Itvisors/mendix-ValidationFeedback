@@ -1,7 +1,7 @@
 {
   "name": "validationfeedback",
   "widgetName": "ValidationFeedback",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Custom validation feedback on attributes or associations where you cannot use the default one",
   "copyright": "Aiden(2024)",
   "author": "Johan Munneke",

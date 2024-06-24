@@ -46,14 +46,14 @@
                     <description>Style of the alert. Possible values: "default" | "primary" | "success" | "info" | "warning" | "danger".</description>
                     <returnType type="String" />
                 </property>
-            <property key="horizontalIndentation" type="boolean" defaultValue="false">
+                <property key="horizontalIndentation" type="boolean" defaultValue="false">
                     <caption>Horizontal indentation</caption>
                     <description>Add spacing left of the validation message.</description>
-            </property>
-            <property key="indentationWidth" type="integer" defaultValue="3">
+                </property>
+                <property key="indentationWidth" type="integer" defaultValue="3">
                     <caption>Indentation width (0-11)</caption>
                     <description/>
-            </property>
+                </property>
             </propertyGroup>
         </propertyGroup>
     </properties>

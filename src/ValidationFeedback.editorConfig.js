@@ -67,7 +67,7 @@ export function check(values) {
     if (values.horizontalIndentation && (values.indentationWidth < 0 || values.indentationWidth > 11)) {
         errors.push({
             property: "indentationWidth",
-            message: "  Indentation width must be a number between 0 and 11"
+            message: "Indentation width must be a number between 0 and 11"
         });
     }
     return errors;

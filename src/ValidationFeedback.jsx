@@ -37,7 +37,7 @@ export function ValidationFeedback({
     return validationFeedbackAttribute || validationFeedbackAssociation ? (
         <div>
             {horizontalIndentation ? (
-                <div className="row">
+                <div className="form-group spacing-outer-bottom-none">
                     <div className={`col-sm-${indentationWidth}`}></div>
                     {validationContent}
                 </div>
